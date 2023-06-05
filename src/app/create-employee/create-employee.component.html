@@ -1,0 +1,32 @@
+<div class="container">
+    <legend class="text-center">Add Employee</legend>
+    <form #employeeForm="ngForm" (ngSubmit)="onSubmit()">
+   <!-- <div *ngFor="let alert of alerts" class="{{cssClass(alert)}}">
+        <span [innerHTML]="alert.message"></span>
+        <button class="btn-close" (click)="removeAlert(alert)"></button>
+    </div>-->
+      <div class="form-group">
+        <label for="firstName" class="form-label">FirstName</label>
+        <input type="text" required #firstName="ngModel" [class.is-invalid]="firstName.invalid && firstName.touched" 
+        name="firstName" [(ngModel)]="employeeModel.firstName" class="form-control" id="firstName" >
+        <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">FirstName is required</small>
+      </div>
+
+  <div class="form-group">
+        <label for="lastName" class="form-label">LastName</label>
+        <input type="text" required #lastName="ngModel" [class.is-invalid]="lastName.invalid && lastName.touched"
+        name="lastName" [(ngModel)]="employeeModel.lastName" class="form-control" id="lastName" >
+        <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">LastName is required</small>
+      </div>
+  <div class="form-group">
+        <label for="emailId" class="form-labels">EmailId</label>
+        <input type="text" required #emailId="ngModel" [class.is-invalid]="emailId.invalid && emailId.touched" 
+        name="emailId" [(ngModel)]="employeeModel.emailId" class="form-control" id="emailId" placeholder="name@example.com">
+        <small class="text-danger" [class.d-none]="emailId.valid || emailId.untouched">emailId is required</small>
+      </div>
+    <div class="form-group">
+      <button type="submit" class="m-0 btn btn-primary col-xs-2 margin-left">Add</button>
+      <button type="Reset"  class="m-4 btn btn-primary col-xs-2 margin-left">clear</button>
+    </div>
+    </form>
+  </div>
